@@ -11,8 +11,8 @@ android {
         applicationId "com.theecoder.robotrader"
         minSdk 26
         targetSdk 32
-        versionCode 8
-        versionName "BOTH MT4 AND MT5+"
+        versionCode 9
+        versionName "BOTH MT4 AND MT5++"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
