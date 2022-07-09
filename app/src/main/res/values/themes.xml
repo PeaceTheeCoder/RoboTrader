@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.RoboTrader" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/blue_dark</item>
+        <item name="colorPrimaryVariant">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondaryVariant">@color/blue_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/blue_dark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <!-- Customize your theme here. -->
+
+        <!--my own colors -->
+        <item name="backgroundColor">@color/grey_light</item>
+        <item name="backgroundColorMuted">@color/white</item>
+        <item name="textColor">@color/white</item>
+        <item name="textColorMuted">@color/blue_dark</item>
+
+        <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowEnterTransition">@transition/trans_anim</item>
+        <item name="android:windowExitTransition">@transition/trans_anim</item>
+        <item name = "android:windowBackground">@color/blue_dark</item>
+
+    </style>
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="MyCustomTextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <item name="boxStrokeColor" >@color/blue_dark</item>
+        <item name="hintTextColor" >@color/blue_dark</item>
+    </style>
+
+    <style name="MyCustomTextInputStyleFocused" parent="MyCustomTextInputStyle"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+        <item name="boxStrokeColor" android:state_focused="true">@color/blue_light</item>
+        <item name="hintTextColor" android:state_focused="true">@color/blue_light</item>
+    </style>
+
+</resources>

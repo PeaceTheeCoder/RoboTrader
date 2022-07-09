@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    tools:context=".ui.home.HomeFragment">
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/selected_bot_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_dark"
+            android:paddingBottom="46dp">
+
+
+            <ImageButton
+                android:id="@+id/bot_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/blue_dark"
+                android:src="@drawable/ic_baseline_info_24" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bot_icard"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:backgroundTint="@color/blue_dark"
+                app:cardCornerRadius="200dp">
+
+                <ImageView
+                    android:id="@+id/logo_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_arrow_circle_right_24" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/top_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bot_icard"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="You are trading with"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/bot_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/top_tag"
+                android:layout_centerHorizontal="true"
+                android:text="Speed Max LETHAL 2"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/owner_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bot_name"
+                android:layout_centerInParent="true"
+                android:text="~ Fundamental Pip Lord"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bot_name"
+                android:layout_centerInParent="true"
+                android:layout_margin="20dp"
+                android:text="~ Fundamental Pip Lord"
+                android:textColor="#970000"
+                android:textSize="16sp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bellow_top_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_layout"
+            android:layout_marginTop="-26dp"
+            android:background="@drawable/back" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bellow_top_layout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-60dp"
+            android:backgroundTint="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/stopButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:textAlignment="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:padding="1dp"
+                        android:src="@drawable/ic_baseline_stop_circle_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Stop"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/textColorMuted"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/startButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:textAlignment="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:padding="1dp"
+                        android:src="@drawable/ic_baseline_play_arrow_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Start"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/textColorMuted"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/gotoasset"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:textAlignment="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:padding="1dp"
+                        android:src="@drawable/ic_baseline_auto_graph_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Symbols"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/textColorMuted"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/delete_ea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:textAlignment="center">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:padding="1dp"
+                        android:src="@drawable/ic_baseline_delete_forever_24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Delete"
+                        android:textAllCaps="true"
+                        android:textColor="?attr/textColorMuted"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_margin="20dp"
+        android:id="@+id/bots_list"
+        android:layout_below="@+id/selected_bot_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="ROBOTS LIST : "
+                    android:textColor="?attr/textColorMuted"
+                    android:textSize="14dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bots_list_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/label"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/robots_layout" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/add_bot_btn"
+                    android:layout_below="@+id/bots_list_recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="8dp"
+                    android:layout_marginTop="10dp"
+
+                    android:backgroundTint="@color/blue_light"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_round_add_circle_24"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical"
+                            android:layout_gravity="center_vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Add a new robot"
+                                android:textColor="?attr/textColor"
+                                android:textStyle="bold"
+                                android:textSize="16dp"
+                                android:layout_height="wrap_content"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:text="Be having a new licence key"
+                                android:textColor="?attr/textColor"
+                                android:textSize="14dp"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+
+
+    </RelativeLayout>
+</RelativeLayout>

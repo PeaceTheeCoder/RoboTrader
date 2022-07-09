@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RoboTrader</string>
+    <string name="accessibility_service_description">This Service is used by RoboTrader To automate trading.</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_help">Help</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="note_text">
+        Please enter the license key you were issued by your mentor or your signal provide.
+        note that this key will only work once, if you will need another one, please contact your signal provider to issue you one.
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

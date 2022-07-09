@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/selected_bot_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue_dark"
+            android:paddingBottom="26dp">
+
+            <TextView
+                android:layout_marginTop="20dp"
+                android:id="@+id/page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Help"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/page"
+                android:layout_centerInParent="true"
+                android:text="FAQs and Technical Support."
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bellow_top_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/top_layout"
+            android:layout_marginTop="-26dp"
+            android:background="@drawable/back" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bellow_top_layout">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/faq_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/label"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/faq_layout" />
+
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/web_btn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="160dp"
+        android:layout_above="@+id/whatsapp_btn"
+        android:backgroundTint="@color/purple"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="20dp"
+        app:cardCornerRadius="200dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_video_library_24"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/whatsapp_btn"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="20dp"
+        app:cardElevation="20dp"
+        android:backgroundTint="@color/green"
+        app:cardCornerRadius="100dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_whatsapp_24"/>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

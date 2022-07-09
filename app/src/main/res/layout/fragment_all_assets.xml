@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="?attr/backgroundColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.assets.types.AllAssetsFragment">
+    <TextView
+        android:id="@+id/note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This are All Symbols which this robot can trade. Select the one you want to allow."
+        android:textColor="?attr/textColorMuted"
+        android:gravity="center"
+        android:textSize="16dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/symbols_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/note"
+        android:layout_marginTop="3dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:layout_marginBottom="40dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:spanCount="2"
+        tools:listitem="@layout/asset_layout" />
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/error_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Error Occurred, please reload"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:textColor="@color/blue_dark"
+            android:gravity="center"
+            android:textSize="20dp"/>
+        <Button
+            android:id="@+id/reload_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Reload"/>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="color_view">
+        <attr name="textColor" format="color"/>
+        <attr name="textColorMuted" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+        <attr name="backgroundColorMuted" format="color"/>
+
+        <attr name="red" format="color"/>
+    </declare-styleable>
+</resources>
