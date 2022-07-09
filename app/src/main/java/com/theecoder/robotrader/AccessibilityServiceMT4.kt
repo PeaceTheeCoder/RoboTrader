@@ -92,41 +92,42 @@ class AccessibilityServiceMT4: AccessibilityService() {
                         if(headText[0].text == assett)
                         {
                             val ACTION = exSignal.getString("action","none")
-                            if (innerChild.className == "android.widget.EditText" && LOCK)
+                            val lotSize = exSignal.getString("lot","0")
+                            val TP = exSignal.getString("tp","0")
+                            val SL = exSignal.getString("sl","0")
+
+                            val lotArguments = Bundle()
+                            val slArguments = Bundle()
+                            val tpArguments = Bundle()
+
+                            val lotClass = innerChild.findAccessibilityNodeInfosByViewId("net.metaquotes.metatrader4:id/amount_edit")
+                            val tpSLClass = innerChild.findAccessibilityNodeInfosByViewId("net.metaquotes.metatrader4:id/price_edit")
+
+                            if(lotClass.size > 0)
                             {
-                                val lotSize = exSignal.getString("lot","0")
-                                val TP = exSignal.getString("tp","0")
-                                val SL = exSignal.getString("sl","0")
+                                lotArguments.putCharSequence(
+                                    AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+                                    lotSize
+                                )
+                                lotClass[0].performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,lotArguments)
+                            }
+                            if(tpSLClass.size>1)
+                            {
+                                slArguments.putCharSequence(
+                                    AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+                                    SL
+                                )
+                                tpSLClass[0].performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,slArguments)
 
+                                tpArguments.putCharSequence(
+                                    AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
+                                    TP
+                                )
+                                tpSLClass[1].performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,tpArguments)
 
-                                val arguments = Bundle()
-
-                                if (innerChild.hintText == "volume")
-                                {
-                                    arguments.putCharSequence(
-                                        AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
-                                        lotSize
-                                    )
-                                    innerChild.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,arguments)
-                                }
-                                if (innerChild.hintText == "SL")
-                                {
-                                    arguments.putCharSequence(
-                                        AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
-                                        SL
-                                    )
-                                    innerChild.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,arguments)
-                                }
-                                if (innerChild.hintText == "TP")
-                                {
-                                    arguments.putCharSequence(
-                                        AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE,
-                                        TP
-                                    )
-                                    innerChild.performAction(AccessibilityNodeInfo.ACTION_SET_TEXT,arguments)
-                                }
                                 PRESS_BUY_OR_SELL = true
                             }
+
 
                             if(PRESS_BUY_OR_SELL)
                             {
